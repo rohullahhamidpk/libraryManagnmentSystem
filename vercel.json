@@ -2,25 +2,25 @@
   "version": 2,
   "builds": [
     {
-      "src": "frontend/package.json",
+      "src": "frontend/package.json",  // Build frontend (React) app
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "frontend/build"
+        "distDir": "frontend/build"  // This is the build output directory for React
       }
     },
     {
-      "src": "backend/package.json",
+      "src": "backend/package.json",  // Build backend (Node.js) app
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "backend/app.js" 
+      "src": "/api/(.*)",  // All API calls will be routed to backend
+      "dest": "backend/app.js"  // Points to the backend entry point
     },
     {
-      "src": "/(.*)",
-      "dest": "frontend/build/index.html"
+      "src": "/(.*)",  // All other routes will be routed to frontend
+      "dest": "frontend/build/index.html"  // Serve the built React app
     }
   ]
 }
