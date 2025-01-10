@@ -7,7 +7,7 @@ import "bootstrap/dist/js/bootstrap.js";
 import axios from "axios";
 axios.defaults.withCredentials = true;
 
-export const backend_server = `http://https://library-managnment-system-8p9p.vercel.app/`;
+export const backend_server = `https://library-managnment-system-8p9p.vercel.app/`;
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App></App>);
 // <React.StrictMode>
