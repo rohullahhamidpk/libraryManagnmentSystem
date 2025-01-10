@@ -2,18 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/server.js",
+      "src": "server.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build"
     }
   ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ],
-  "env": {
-    "DATABASE_URL": "mongodb+srv://rohanhamidpk:DXiio4d7D00FVcJM@librarymanagementsystem.9idd8.mongodb.net/?retryWrites=true&w=majority&appName=LibraryManagementSystem",
-  }
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server.js"
+    }
+  ]
 }
