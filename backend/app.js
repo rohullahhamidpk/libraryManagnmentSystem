@@ -10,8 +10,9 @@ const { ConnectDatabase } = require("./database/databaseConnector");
 
 // ✅ CORS Configuration Updated for Vercel Deployment
 app.use(cors({
-    credentials: true,
     origin: process.env.FRONTEND_URL || "https://library-managnment-system-8p9p.vercel.app/"
+    methods: ["POST", "GET"],
+    credentials: true,
 }));
 
 app.use(cookieParser());
