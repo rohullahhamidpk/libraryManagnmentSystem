@@ -15,6 +15,5 @@
   ],
   "env": {
     "DATABASE_URL": "mongodb+srv://rohanhamidpk:DXiio4d7D00FVcJM@librarymanagementsystem.9idd8.mongodb.net/?retryWrites=true&w=majority&appName=LibraryManagementSystem",
-    "API_KEY": "@api_key"
   }
 }
