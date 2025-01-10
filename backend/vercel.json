@@ -1,12 +1,19 @@
 {
-  "version" : 2,
-  "builds" :[
-     { "src" : "*js", "use" : "@vercel/node"}
-  ]
-  "routes" :[
+  "version": 2,
+  "builds": [
     {
-      "src" : "/(.*)",
-      "dest" : "/",
+      "src": "backend/app.js",  // Points to your backend entry file (e.g., app.js or server.js)
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",  // Routes all /api requests to the backend
+      "dest": "backend/app.js"  // Points to your main backend entry file (app.js)
+    },
+    {
+      "src": "/(.*)",  // Routes all other requests (frontend-related) to the correct location
+      "dest": "/index.html"
     }
   ]
 }
