@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
 
 const AdminSignup = () => {
-  const API_URL = 'http://localhost:5000/api/v1/signup'
+  const API_URL = 'https://library-managnment-system-8p9p.vercel.app/api/v1/signup'
 
   const refUsername = useRef(null)
 
