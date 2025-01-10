@@ -2,14 +2,30 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
+      "src": "Frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "Frontend/build"
+      }
+    },
+    {
+      "src": "Backend/server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "Backend/server.js"
+    },
+    {
       "src": "/(.*)",
-      "dest": "server.js"
+      "dest": "Frontend/build/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "Backend/server.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
 }
