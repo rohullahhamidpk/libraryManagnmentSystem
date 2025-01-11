@@ -12,6 +12,11 @@
   }
  ],
  "routes": [
+  { "handle": "filesystem" },
+    {
+      "src": "routes/(.*)",
+      "dest": "routes/$1"
+    },
   {
    "src": "/(.*)",
    "dest": "app.js"
