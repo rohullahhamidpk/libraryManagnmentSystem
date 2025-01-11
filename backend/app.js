@@ -33,7 +33,22 @@ const CustomError = require("./errorHandler/CustomError");
 const PageNotFound = require("./errorHandler/PageNotFound");
 
 // Allow CORS Policy
-app.use(cors())
+const allowedOrigins = ['https://library-managnment-system-8p9p.vercel.app'];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true, // Allow cookies and credentials
+  })
+);
+
+
 
 // For recieiving httpOnly cookies
 
