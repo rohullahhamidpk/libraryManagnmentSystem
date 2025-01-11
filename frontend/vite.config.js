@@ -5,6 +5,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
+    proxy: {
+      "/api": "https://lms-backend-api-blush.vercel.app",
+    },
     host: true,
     strictPort: true,
     port: 5173,
