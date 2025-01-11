@@ -20,7 +20,7 @@ const updateBookImage = require('../controller/bookImageUpdateController')
 booksRouter
   .route('/')
   .get(getAllBooks)
-  .post(verifyToken, adminAuthorization, upload.single('image'), postBook)
+  .post(verifyToken, adminAuthorization,/* upload.single('image'),*/ postBook)
 
 booksRouter
   .route('/:id')
