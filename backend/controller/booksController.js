@@ -15,7 +15,7 @@ const getAllBooks = async (req, res) => {
 const postBook = async (req, res) => {
   // ---------------------------MULTER---CREATING----NEW----BOOK-------------------
 
-  const image = req.file.path
+  const image = req.file?.path || ''
   const { title, description, language, author, category } = req.body
 
   let featured
