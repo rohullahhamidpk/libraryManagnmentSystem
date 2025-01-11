@@ -36,7 +36,7 @@ const PageNotFound = require("./errorHandler/PageNotFound");
 app.use(cors())
 
 // For recieiving httpOnly cookies
-app.use(cors({ credentials: true, origin: "https://library-managnment-system-8p9p.vercel.app/" }));
+
 
 app.use(cookieParser());
 
